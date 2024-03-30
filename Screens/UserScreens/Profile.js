@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, ScrollView, Image } from "react-native";
 import Icon1 from "react-native-vector-icons/AntDesign";
+import Icon2 from "react-native-vector-icons/Feather";
 export default function Profile() {
   return (
     <View style={styles.container}>
@@ -28,28 +29,64 @@ export default function Profile() {
               Saved Places
             </Text>
             <View>
-              <View style={styles.menuItemContainer}>
-                {/* <Image
-                  source={require("../assets/home.png")}
-                  style={styles.menuIcon}
-                /> */}
+            <View style={styles.btnarrow}>
+                <View style={styles.menuItemContainer}>
+                <Icon1
+                  name="home"
+                  color="black"
+                  size={20}
+                  style={styles.buttonIcon}
+                />
                 <Text style={styles.menuItem}>Enter Home Location</Text>
+                </View>
+                <View style={{ marginTop: 10 }}>
+                  <Icon1
+                    name="right"
+                    color="black"
+                    size={20}
+                    style={styles.buttonIcon}
+                  />
+                </View>
               </View>
               <View style={styles.line} />
-              <View style={styles.menuItemContainer}>
-                {/* <Image
-                  source={require("../assets/work.png")}
-                  style={styles.menuIcon}
-                /> */}
+              <View style={styles.btnarrow}>
+                <View style={styles.menuItemContainer}>
+                <Icon2
+                  name="briefcase"
+                  color="black"
+                  size={20}
+                  style={styles.buttonIcon}
+                />
                 <Text style={styles.menuItem}>Enter Work Location</Text>
+                </View>
+                <View style={{ marginTop: 10 }}>
+                  <Icon1
+                    name="right"
+                    color="black"
+                    size={20}
+                    style={styles.buttonIcon}
+                  />
+                </View>
               </View>
               <View style={styles.line} />
-              <View style={styles.menuItemContainer}>
-                {/* <Image
-                  source={require("../assets/addplace.png")}
-                  style={styles.menuIcon}
-                /> */}
+              <View style={styles.btnarrow}>
+                <View style={styles.menuItemContainer}>
+                <Icon1
+                  name="plus"
+                  color="black"
+                  size={20}
+                  style={styles.buttonIcon}
+                />
                 <Text style={styles.menuItem}>Add a place</Text>
+                </View>
+                <View style={{ marginTop: 10 }}>
+                  <Icon1
+                    name="right"
+                    color="black"
+                    size={20}
+                    style={styles.buttonIcon}
+                  />
+                </View>
               </View>
             </View>
           </View>
@@ -60,63 +97,108 @@ export default function Profile() {
               Others
             </Text>
             <View>
-              <View style={styles.menuItemContainer}>
-                {/* <Image
-                  source={require("../assets/home.png")}
-                  style={styles.menuIcon}
-                /> */}
+            <View style={styles.btnarrow}>
+                <View style={styles.menuItemContainer}>
+                <Icon2
+                  name="dollar-sign"
+                  color="black"
+                  size={20}
+                  style={styles.buttonIcon}
+                />
                 <Text style={styles.menuItem}>Payment methods</Text>
+                </View>
+                <View style={{ marginTop: 10 }}>
+                  <Icon1
+                    name="right"
+                    color="black"
+                    size={20}
+                    style={styles.buttonIcon}
+                  />
+                </View>
               </View>
               <View style={styles.line} />
-              <View style={styles.menuItemContainer}>
-                {/* <Image
-                  source={require("../assets/work.png")}
-                  style={styles.menuIcon}
-                /> */}
-                <Text style={styles.menuItem}>Your trips</Text>
-              </View>
-              <View style={styles.line} />
-              <View style={styles.menuItemContainer}>
-                {/* <Image
-                  source={require("../assets/addplace.png")}
-                  style={styles.menuIcon}
-                /> */}
+              <View style={styles.btnarrow}>
+                <View style={styles.menuItemContainer}>
+                <Icon1
+                  name="notification"
+                  color="black"
+                  size={20}
+                  style={styles.buttonIcon}
+                />
                 <Text style={styles.menuItem}>Notifications</Text>
+                </View>
+                <View style={{ marginTop: 10 }}>
+                  <Icon1
+                    name="right"
+                    color="black"
+                    size={20}
+                    style={styles.buttonIcon}
+                  />
+                </View>
               </View>
+              
               <View style={styles.line} />
-              <View style={styles.menuItemContainer}>
-                {/* <Image
-                  source={require("../assets/addplace.png")}
-                  style={styles.menuIcon}
-                /> */}
+              <View style={styles.btnarrow}>
+                <View style={styles.menuItemContainer}>
+                <Icon1
+                  name="customerservice"
+                  color="black"
+                  size={20}
+                  style={styles.buttonIcon}
+                />
                 <Text style={styles.menuItem}>Help Center</Text>
-              </View>
-              <View style={styles.line} />
-              <View style={styles.menuItemContainer}>
-                {/* <Image
-                  source={require("../assets/addplace.png")}
-                  style={styles.menuIcon}
-                /> */}
-                <Text style={styles.menuItem}>About us</Text>
+                </View>
+                <View style={{ marginTop: 10 }}>
+                  <Icon1
+                    name="right"
+                    color="black"
+                    size={20}
+                    style={styles.buttonIcon}
+                  />
+                </View>
               </View>
             </View>
           </View>
           <View style={styles.outercontainer}>
             <View>
-              <View style={styles.menuItemContainer}>
-                {/* <Image
-                  source={require("../assets/home.png")}
-                  style={styles.menuIcon}
-                /> */}
-                <Text style={styles.menuItem}>Logout</Text>
+              <View style={styles.btnarrow}>
+                <View style={styles.menuItemContainer}>
+                <Icon1
+                  name="logout"
+                  color="black"
+                  size={20}
+                  style={styles.buttonIcon}
+                />
+                  <Text style={styles.menuItem}>Logout</Text>
+                </View>
+                <View style={{ marginTop: 10 }}>
+                  <Icon1
+                    name="right"
+                    color="black"
+                    size={20}
+                    style={styles.buttonIcon}
+                  />
+                </View>
               </View>
               <View style={styles.line} />
-              <View style={styles.menuItemContainer}>
-                {/* <Image
-                  source={require("../assets/work.png")}
-                  style={styles.menuIcon}
-                /> */}
-                <Text style={styles.menuItem}>Delete Account</Text>
+              <View style={styles.btnarrow}>
+                <View style={styles.menuItemContainer}>
+                  <Icon1
+                    name="deleteuser"
+                    color="black"
+                    size={20}
+                    style={styles.buttonIcon}
+                  />
+                  <Text style={styles.menuItem}>Delete Account</Text>
+                </View>
+                <View style={{ marginTop: 10 }}>
+                  <Icon1
+                    name="right"
+                    color="black"
+                    size={20}
+                    style={styles.buttonIcon}
+                  />
+                </View>
               </View>
             </View>
           </View>
@@ -216,5 +298,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginLeft: "5%",
     marginTop: 15,
+  },
+  buttonIcon: {
+    marginRight: 5,
+  },
+  btnarrow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginRight: "4%",
   },
 });
