@@ -1,7 +1,36 @@
 import { View, Text, StyleSheet, ScrollView, Image, TextInput, TouchableOpacity } from 'react-native'
 import React from 'react'
-
+import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useState } from 'react';
 export default function Login() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const handleLogin = () => {
+        const user = {
+          email: email,
+          password: password,
+        };
+        axios
+          .post("https://cary.onrender.com/loginUser", user)
+          .then((response) => {
+            
+            const token = response.data.token;
+            const userrr=response.data.u;
+            AsyncStorage.setItem("userId",userrr.userid);
+            AsyncStorage.setItem("email",userrr.email);
+            AsyncStorage.setItem("name",userrr.name);
+            AsyncStorage.setItem("authToken", token);
+            
+            // navigation.replace("BottomTab");
+            console.log("Login Successfull");
+            setEmail("");
+            setPassword("");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      };
     return (
         <View style={styles.container}>
             <ScrollView>
@@ -49,14 +78,18 @@ export default function Login() {
                         <TextInput
                             style={styles.input}
                             placeholder="Email or phone*"
+                            value={email}
+                            onChangeText={setEmail}
                         />
                         <TextInput
                             style={styles.input}
                             placeholder="Password*"
                             secureTextEntry={true}
+                            value={password}
+                            onChangeText={setPassword}
                         />
                     </View>
-                    <TouchableOpacity style={styles.loginButton}>
+                    <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
                         <Text style={styles.buttonText}>Login</Text>
                     </TouchableOpacity>
                     <View style={styles.signupContainer}>
