@@ -63,7 +63,8 @@ app.post("/registerUser",async(req,res)=>{
 
         await newUser.save();
 
-        return sendVerificationEmail(newUser.email,newUser.verificationToken);
+        await sendVerificationEmail(newUser.email,newUser.verificationToken);
+        res.status(200).json({message:"User Created and Verified Successfully"});
     }
     catch(error){
         console.log("Error registering user ",error);
