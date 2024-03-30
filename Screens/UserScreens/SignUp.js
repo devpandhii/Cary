@@ -1,7 +1,26 @@
 import { View, Text, StyleSheet, ScrollView, Image, TextInput, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function SignUp() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [fullName, setFullName] = useState("");
+    const handleRegister = () => {
+        const user = {
+            email: email,
+            password: password,
+            name: fullName
+        };
+        axios.post("https://cary.onrender.com/registerUser", user).then((response) => {
+            console.log(response);
+            setFullName("");
+            setEmail("");
+            setPassword("")
+        }).catch((err) => {
+            console.log(err);
+        })
+
+    }
     return (
         <View style={styles.container}>
             <ScrollView>
@@ -49,17 +68,23 @@ export default function SignUp() {
                         <TextInput
                             style={styles.input}
                             placeholder="Name*"
+                            value={fullName}
+                            onChangeText={setFullName}
                         />
                         <TextInput
                             style={styles.input}
                             placeholder="Email or phone*"
+                            value={email}
+                            onChangeText={setEmail}
                         />
                         <TextInput
                             style={styles.input}
                             placeholder="Password*"
                             secureTextEntry={true}
+                            value={password}
+                            onChangeText={setPassword}
                         />
-                        
+
                     </View>
                     <TouchableOpacity style={styles.loginButton}>
                         <Text style={styles.buttonText}>Sign up</Text>
@@ -77,8 +102,8 @@ export default function SignUp() {
                         >
                             Don’t have an account?
                         </Text>
-                        <TouchableOpacity>
-                            <Text style={styles.bottombuttontext}> login</Text>
+                        <TouchableOpacity onPress={handleRegister}>
+                            <Text style={styles.bottombuttontext}> Login</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
