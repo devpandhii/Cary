@@ -63,7 +63,7 @@ app.post("/registerUser",async(req,res)=>{
 
         await newUser.save();
 
-        sendVerificationEmail(newUser.email,newUser.verificationToken);
+        return sendVerificationEmail(newUser.email,newUser.verificationToken);
     }
     catch(error){
         console.log("Error registering user ",error);
@@ -82,7 +82,7 @@ app.get("/verifyUser/:token",async(req,res)=>{
 
         user.verified=true;
         user.verificationToken=undefined;
-        res.status(200).json({message:"Email verified successully"});
+        return res.status(200).json({message:"Email verified successully"});
     }
     catch(err){
         res.status(500).json({message: "Email Verification Failed"})
