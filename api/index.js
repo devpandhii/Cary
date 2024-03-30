@@ -82,6 +82,7 @@ app.get("/verifyUser/:token",async(req,res)=>{
 
         user.verified=true;
         user.verificationToken=undefined;
+        await user.save();
         return res.status(200).json({message:"Email verified successully"});
     }
     catch(err){
