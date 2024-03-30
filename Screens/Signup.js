@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, ScrollView, Image, TextInput, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-export default function Login() {
+export default function Signup() {
     return (
         <View style={styles.container}>
             <ScrollView>
