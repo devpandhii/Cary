@@ -1,17 +1,17 @@
 import { View, Text, StyleSheet, ScrollView, Image, TextInput, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
-
+import axios from 'axios';
 export default function SignUp() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [fullName, setFullName] = useState("");
-    const handleRegister = () => {
+    const handleRegister = async () => {
         const user = {
             email: email,
             password: password,
             name: fullName
         };
-        axios.post("https://cary.onrender.com/registerUser", user).then((response) => {
+        await axios.post("https://cary.onrender.com/registerUser", user).then((response) => {
             console.log(response);
             setFullName("");
             setEmail("");
@@ -86,7 +86,7 @@ export default function SignUp() {
                         />
 
                     </View>
-                    <TouchableOpacity style={styles.loginButton}>
+                    <TouchableOpacity onPress={handleRegister} style={styles.loginButton}>
                         <Text style={styles.buttonText}>Sign up</Text>
                     </TouchableOpacity>
                     <View style={styles.signupContainer}>
@@ -102,7 +102,7 @@ export default function SignUp() {
                         >
                             Don’t have an account?
                         </Text>
-                        <TouchableOpacity onPress={handleRegister}>
+                        <TouchableOpacity>
                             <Text style={styles.bottombuttontext}> Login</Text>
                         </TouchableOpacity>
                     </View>
