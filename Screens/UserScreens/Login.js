@@ -28,7 +28,7 @@ export default function Login() {
                 </Text>
                 <View style={styles.Loginimgview}>
                     <Image
-                        source={require("../assets/login.png")}
+                        source={require("../../assets/login.png")}
                         style={styles.Loginimg}
                     />
                 </View>
