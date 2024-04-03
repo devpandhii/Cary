@@ -171,14 +171,6 @@ export default function Profile() {
                 />
                   <Text style={styles.menuItem}>Logout</Text>
                 </View>
-                <View style={{ marginTop: 10 }}>
-                  <Icon1
-                    name="right"
-                    color="black"
-                    size={20}
-                    style={styles.buttonIcon}
-                  />
-                </View>
               </View>
               <View style={styles.line} />
               <View style={styles.btnarrow}>
@@ -190,14 +182,6 @@ export default function Profile() {
                     style={styles.buttonIcon}
                   />
                   <Text style={styles.menuItem}>Delete Account</Text>
-                </View>
-                <View style={{ marginTop: 10 }}>
-                  <Icon1
-                    name="right"
-                    color="black"
-                    size={20}
-                    style={styles.buttonIcon}
-                  />
                 </View>
               </View>
             </View>
@@ -211,7 +195,7 @@ export default function Profile() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#CBCBCB",
+    backgroundColor: "#ececec",
   },
   innercontainer: {
     backgroundColor: "#FFFFFF",
